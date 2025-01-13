@@ -7,7 +7,7 @@ import { ClipboardService } from './ngx-clipboard.service';
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'test-cmp',
-    template: `<span *ngxClipboardIfSupported ngxClipboard cbContent="Foo Bar"> Copy Foo Bar </span>`
+    template: ` <span *ngxClipboardIfSupported ngxClipboard cbContent="Foo Bar"> Copy Foo Bar </span>`
 })
 class TestComponent {}
 
@@ -31,21 +31,15 @@ describe('ngxClipboardIfSupported directive', () => {
         spy = spyOnProperty(clipboardService, 'isSupported', 'get');
     });
 
-    it(
-        'should not render host when copy is not supported',
-        waitForAsync(() => {
-            spy.and.returnValue(false);
-            fixture.detectChanges();
-            expect(fixture.debugElement.queryAll(By.css('span')).length).toEqual(0);
-        })
-    );
+    it('should not render host when copy is not supported', waitForAsync(() => {
+        spy.and.returnValue(false);
+        fixture.detectChanges();
+        expect(fixture.debugElement.queryAll(By.css('span')).length).toEqual(0);
+    }));
 
-    it(
-        'should render host when copy is supported',
-        waitForAsync(() => {
-            spy.and.returnValue(true);
-            fixture.detectChanges();
-            expect(fixture.debugElement.queryAll(By.css('span')).length).toEqual(1);
-        })
-    );
+    it('should render host when copy is supported', waitForAsync(() => {
+        spy.and.returnValue(true);
+        fixture.detectChanges();
+        expect(fixture.debugElement.queryAll(By.css('span')).length).toEqual(1);
+    }));
 });
