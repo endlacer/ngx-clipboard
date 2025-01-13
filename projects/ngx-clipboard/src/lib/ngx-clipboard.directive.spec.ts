@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { IClipboardResponse } from './interface';
-import { ClipboardModule } from './ngx-clipboard.module';
 import { ClipboardService } from './ngx-clipboard.service';
+import { ClipboardDirective } from './ngx-clipboard.directive';
 
 /*
  * Shell component with property 'text' that will be used with our tests
@@ -14,7 +14,9 @@ import { ClipboardService } from './ngx-clipboard.service';
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'test-clipboard',
-    template: ` <span>PlaceHolder HTML to be Replaced</span> `
+    template: ` <span>PlaceHolder HTML to be Replaced</span> `,
+    standalone: true,
+    imports: [BrowserModule, ClipboardDirective, FormsModule]
 })
 export class TestClipboardComponent {
     public text = 'text';
@@ -36,8 +38,7 @@ describe('Directive: clipboard', () => {
     describe('GIVEN: no root configuration', () => {
         beforeEach(() => {
             TestBed.configureTestingModule({
-                declarations: [TestClipboardComponent],
-                imports: [BrowserModule, ClipboardModule, FormsModule],
+                imports: [BrowserModule, ClipboardDirective, FormsModule, TestClipboardComponent],
                 providers: [ClipboardService]
             });
         });

@@ -3,7 +3,8 @@ import { Directive, OnInit, TemplateRef, ViewContainerRef } from '@angular/core'
 import { ClipboardService } from './ngx-clipboard.service';
 
 @Directive({
-    selector: '[ngxClipboardIfSupported]'
+    selector: '[ngxClipboardIfSupported]',
+    standalone: true
 })
 export class ClipboardIfSupportedDirective implements OnInit {
     constructor(
