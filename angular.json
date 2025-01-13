@@ -56,18 +56,18 @@
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
-                        "browserTarget": "library-host:build"
+                        "buildTarget": "library-host:build"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "library-host:build:production"
+                            "buildTarget": "library-host:build:production"
                         }
                     }
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "library-host:build"
+                        "buildTarget": "library-host:build"
                     }
                 },
                 "test": {
