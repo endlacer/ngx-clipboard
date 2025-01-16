@@ -10,18 +10,18 @@ From 6.0.0, there is no other JS dependency anymore. Just Angular.
 
 It works with angular version 2.0.0 and up
 
-To make more sense with the future versioning scheme of Angular, the directive selector is now rename to **ngxClipboard**
+To make more sense with the future versioning scheme of Angular, the directive selector is now renamed to **ngxClipboard**
 
 ## Dependencies
 
--   If you need to use it on 2.x, please use version 7.x.x.
--   If you need to use it on 4.x, please use version 8.x.x.
--   If you need to use it on 5.x, please use version 10.x.x.
--   If you need to use it on 8.x, please use version 12.x.x.
--   If you need to use it on 9.x, please use version 13.x.x.
--   If you need to use it on 10.x - 12.x, please use version 14.0.2.
--   If you need to use it on 13.x, please use version 15.x.x. (Also thanks https://github.com/arturovt for updating & tuning)
--   If you need to use it on 18.x, please use version 16.x.x. (Also thanks https://github.com/arturovt for updating & tuning)
+- If you need to use it on 2.x, please use version 7.x.x.
+- If you need to use it on 4.x, please use version 8.x.x.
+- If you need to use it on 5.x, please use version 10.x.x.
+- If you need to use it on 8.x, please use version 12.x.x.
+- If you need to use it on 9.x, please use version 13.x.x.
+- If you need to use it on 10.x - 12.x, please use version 14.0.2.
+- If you need to use it on 13.x, please use version 15.x.x. (Also thanks https://github.com/arturovt for updating & tuning)
+- If you need to use it on 18.x, please use version 17.x.x. (Also thanks https://github.com/endlacer for updating & tuning)
 
 The code are pretty much the same, in v8.0.0 it uses InjectionToken which requires angular4 and above.
 
@@ -61,7 +61,7 @@ System.config({
 
 This library support multiple kinds of copy source.
 
--   Setting `cbContent` attribute
+- Setting `cbContent` attribute
 
 ```html
 <button ngxClipboard [cbContent]="'target string'">Copy</button>
@@ -75,7 +75,7 @@ You can assign the parent **container** to avoid focus trapper issue, #145
 </div>
 ```
 
--   Setting an input target
+- Setting an input target
 
 ```html
 ....
@@ -85,7 +85,7 @@ You can assign the parent **container** to avoid focus trapper issue, #145
 <button [ngxClipboard]="inputTarget">Copy</button>
 ```
 
--   Using `copy` from `ClipboardService` to copy any text you dynamically created.
+- Using `copy` from `ClipboardService` to copy any text you dynamically created.
 
 ```ts
 import { ClipboardService } from 'ngx-clipboard'
@@ -103,7 +103,7 @@ copy(text: string){
 
 ### Callbacks
 
--   `cbOnSuccess` callback attribute is triggered after copy was successful with `$event: {isSuccess: true, content: string}`
+- `cbOnSuccess` callback attribute is triggered after copy was successful with `$event: {isSuccess: true, content: string}`
 
 ```html
 <button (cbOnSuccess)="copied($event)" [cbContent]="'example string'">Copied</button>
@@ -115,7 +115,7 @@ Or updating parameters directly like so
 <button (cbOnSuccess)="isCopied = true" [cbContent]="'example string'">Copied</button>
 ```
 
--   `cbOnError` callback attribute is triggered when there's failure in copying with `$event:{isSuccess: false}`
+- `cbOnError` callback attribute is triggered when there's failure in copying with `$event:{isSuccess: false}`
 
 ### Conditionally render host
 
@@ -180,7 +180,7 @@ To run demo code locally
 
 ## Contributing
 
--   Your commits conform to the conventions established [here](https://github.com/conventional-changelog/conventional-changelog-angular/blob/master/convention.md)
+- Your commits conform to the conventions established [here](https://github.com/conventional-changelog/conventional-changelog-angular/blob/master/convention.md)
 
 ## Troubleshooting
 
