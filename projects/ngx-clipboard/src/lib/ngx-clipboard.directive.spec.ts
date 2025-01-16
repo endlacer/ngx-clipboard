@@ -14,7 +14,8 @@ import { ClipboardService } from './ngx-clipboard.service';
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'test-clipboard',
-    template: ` <span>PlaceHolder HTML to be Replaced</span> `
+    template: ` <span>PlaceHolder HTML to be Replaced</span> `,
+    standalone: false
 })
 export class TestClipboardComponent {
     public text = 'text';
