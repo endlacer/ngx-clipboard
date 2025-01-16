@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { ClipboardModule } from './ngx-clipboard.module';
 import { ClipboardService } from './ngx-clipboard.service';
-import { ClipboardIfSupportedDirective } from './ngx-clipboard-if-supported.directive';
-import { ClipboardDirective } from './ngx-clipboard.directive';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'test-cmp',
-    template: ` <span *ngxClipboardIfSupported ngxClipboard cbContent="Foo Bar"> Copy Foo Bar </span>`,
-    imports: [ClipboardIfSupportedDirective, ClipboardDirective],
-    standalone: true
+    template: `<span *ngxClipboardIfSupported ngxClipboard cbContent="Foo Bar"> Copy Foo Bar </span>`,
+    imports: [ClipboardModule]
 })
 class TestComponent {}
 
@@ -25,7 +23,7 @@ describe('ngxClipboardIfSupported directive', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [ClipboardIfSupportedDirective, TestComponent]
+            imports: [ClipboardModule, TestComponent]
         });
 
         clipboardService = TestBed.get(ClipboardService);

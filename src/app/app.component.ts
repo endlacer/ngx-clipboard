@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ClipboardService, ClipboardModule } from 'ngx-clipboard';
-import { FormsModule } from '@angular/forms';
+import { ClipboardService } from 'ngx-clipboard';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    imports: [FormsModule, ClipboardModule]
+    standalone: false
 })
 export class AppComponent implements OnInit {
     text1: string;
